@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "postinstall": "npm run build",
+    "start": "node serve.js",
+    "install:clean": "rm -rf node-modules/ && rm -rf package-lock.json && npm install && npm run dev",
     "e2e": "ng e2e",
     "compodoc": "npx compodoc -p tsconfig.json src"
   },
@@ -28,6 +30,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "bootstrap": "^4.5.3",
+    "express": "^4.17.1",
     "install": "^0.13.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
