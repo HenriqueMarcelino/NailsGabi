@@ -1,10 +1,20 @@
-var express = require('express')
-var path = require('path')
-var serveStatic = require('serve-static')
+var express = require('express');
+var app = express();
 
-var app = express()
-app.use(serveStatic(path.join(__dirname)))
+app.set('view engine','ejs');
 
-var port = process.env.PORT || 5000
-app.listen(port)
-console.log('serve started' + port)
+app.get("/", function(req, res) {
+    res.send("Respota da Home");
+   // Você pode trocar a linha acima por:
+  // res.render('"index")
+  // lembre que pra funcionar a linha acima você tem que 
+  // criar o index.ejs dentro da pasta views
+})
+
+app.get('/produtos',function(req,res){
+    res.render("home/contato");
+});
+
+app.listen(3000,function(){
+    console.log("servidor rodando");
+});
