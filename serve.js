@@ -1,10 +1,12 @@
-var express = require('express')
-var path = require('path')
-var serveStatic = require('serve-static')
+const express = require('express');
+const path = require('path');
+const nomeApp = 'NailsGabi';
+const app = express();
 
-var app = express()
-app.use(serveStatic(path.join(__dirname)))
+app.use(express.static(`${__dirname}/dist/${nomeApp}`));
 
-var port = process.env.PORT || 5000
-app.listen(port)
-console.log('serve started' + port)
+app.get('/*', (req, res) => {
+res.sendFile(path.join(`${__dirname}/dist/${nomeApp}/index.html`));
+});
+
+app.listen(process.env.PORT || 5000);
