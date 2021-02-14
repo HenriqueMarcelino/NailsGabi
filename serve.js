@@ -11,7 +11,7 @@ app.get("/", function(req, res) {
   // criar o index.ejs dentro da pasta views
 })
 
-app.get('/produtos',function(req,res){
+app.get('/home',function(req,res){
     res.render("home/contato");
 });
 
