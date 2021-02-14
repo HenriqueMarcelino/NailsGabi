@@ -1,5 +1,5 @@
-var express = requere('express')
-var path = requere('path')
+var express = require('express')
+var path = require('path')
 var serveStatic = require('serve-static')
 
 var app = express()
